@@ -1,6 +1,25 @@
+NAMA    : JESITA APRIMESTI
+NIM     : F1G124032
+KELAS   : A
+
 # miniprojectPCD
 
-Analisis
+#Hasil Pengujian Deteksi Tanda Tangan:
+Sistem diuji menggunakan citra beresolusi tinggi (2481x3506 piksel) yang merepresentasikan berbagai kondisi degradasi dokumen di dunia nyata.
+
+Dari hasil eksekusi program, diperoleh data sebagai berikut:
+01_HighQuality_Enhanced: 7.41% (PRESENT)
+02_LowContrast: 7.50% (PRESENT)
+03_Blurred: 11.69% (PRESENT)
+04_HighNoise: 7.16% (PRESENT)
+05_LowResolution_Upsampled: 9.20% (PRESENT)
+06_Faded_Underexposed: 7.63% (PRESENT)
+07_ColorShift_WarmTint: 7.52% (PRESENT)
+08_JPEGCompression_Artifacts: 7.72% (PRESENT)
+09_CombinedDegradation: 8.81% (PRESENT)
+
+
+#Analisis
 1. Mengapa thresholding diperlukan sebelum melakukan analisis keberadaan tanda tangan?
 
 Thresholding diperlukan untuk memisahkan objek tanda tangan dari latar belakang pada citra. Pada gambar ijazah, tanda tangan biasanya berupa goresan atau piksel yang lebih gelap dibandingkan dengan latar belakang kertas yang relatif terang. Dengan thresholding, citra grayscale diubah menjadi citra biner yang hanya memiliki dua nilai, yaitu hitam dan putih. Dengan demikian, piksel yang dianggap sebagai bagian dari tanda tangan dapat dihitung dengan lebih mudah. Hasil thresholding kemudian dapat digunakan untuk menghitung jumlah piksel foreground dan rasio piksel tersebut terhadap seluruh area crop. Rasio inilah yang digunakan untuk membantu menentukan apakah pada area tersebut terdapat tanda tangan atau tidak.
